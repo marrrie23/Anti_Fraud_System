@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: These terms are synonymous
+  - text: Inner classes include nested classes
+  - text: Nested classes include inner classes
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11506#comment
+status: Solved
+record: -1
+custom_name: Nested or inner?
+local_check: false

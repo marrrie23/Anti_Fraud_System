@@ -1,0 +1,122 @@
+<div class="step-text">
+<p>If you would like to create your own superhero, what would you do? Of course, you would open a favorite development environment and create a class <code class="language-java">Superhero</code>! </p>
+<p>To be a proper superhero, our character will need a set of special items, including, for example, a magic cloak or a hammer. Here we may have a problem. What is the best way to organize the classes describing the equipment? And how can we mark that only one class, that is <code class="language-java">Superhero</code>, can use them? </p>
+<p>Here appears our savior — an instrument called <strong><a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a nested class is a class that is declared inside another class, also known as the outer class. | Nested classes can help organize code logically and increase encapsulation. They are commonly referred to as inner classes and can be further divided into two types: static nested classes and local inner classes. Static nested classes have a static scope and can be accessed without creating an instance of the outer class. On the other hand, local inner classes are defined within a method or a code block and have a limited scope, only existing within the method or code block they are defined in.">nested classes</a></strong>. They help us group classes logically and increase the encapsulation of our code.</p>
+<h5 id="what-is-a-nested-class">What is a nested class?</h5>
+<p>Basically, you can call a class <strong>nested</strong> when it is declared inside another class.</p>
+<p>This is what our superhero would look like: </p>
+<pre><code class="language-java">class Superhero {
+    
+    class MagicCloak {
+        
+    }
+    
+    class Hammer {
+
+    }
+}</code></pre>
+<p>Both classes<code class="language-java">MagicCloak</code> and <code class="language-java">Hammer</code> are nested classes. The <code class="language-java">Superhero</code> class is often called an <strong><a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, an outer class is a top-level class that contains one or more nested classes. | It provides a logical grouping of classes and increases encapsulation of the code. A nested class is a member of an outer class and can be either a non-static nested class (also known as an inner class) or a static nested class. An outer class can have fields, methods, and constructors like any other class. Nested classes have access to the members of the outer class, including private members, making them useful for encapsulating related functionality and data.">outer class</a></strong><em>,</em><strong><em> </em></strong>and a nested class is called a <strong>member </strong>of an outer class.</p>
+<p>In this topic, we are going to talk about <strong>non-static nested classes, </strong>which are commonly known as <strong><a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, an inner class is a class that is defined within another class or interface. | They are non-static nested classes, which means they have access to the members (variables and methods) of the outer class, including private ones. This increases encapsulation as the inner class can hide some code from other classes. Inner classes can be of two types: local and member. Local inner classes are defined within a block and have a scope restricted to that block. They are used when you need a class for a specific task within a method. Member inner classes are defined within a class but outside any method.">inner classes</a></strong>.</p>
+<h5 id="inner-class">Inner class</h5>
+<p>Let's move on to another example. Imagine that you are writing a class <code class="language-java">Cat</code> representing cats. The <code class="language-java">Cat</code> class may have a lot of fields and methods, but we may also use inner class structures. For example,  let's say you want a cat to have a bow. Then you need to create a new class <code class="language-java">Bow</code>. This class <code class="language-java">Bow</code> would be quite small and specific, and you know you won't need a bow without a cat. The solution is to create the class <code class="language-java">Bow</code> inside the <code class="language-java">Cat</code> class:</p>
+<pre><code class="language-java">public class Cat {
+
+    private String name;
+
+    public Cat(String name) {
+        this.name = name;
+    }
+
+    public class Bow {
+        private String color;
+
+        public Bow(String color) {
+            this.color = color;
+        }
+
+        public void printColor() {
+            System.out.println("Cat " + Cat.this.name + " has a " + this.color + " bow.");
+        }
+    }
+}</code></pre>
+<p>Let's create a cat <code class="language-java">Bob</code> with a red bow:</p>
+<pre><code class="language-java">public class Main {
+
+    public static void main(String[] args) {
+
+        Cat cat = new Cat("Bob");
+        Cat.Bow bow = cat.new Bow("red");
+
+        bow.printColor();
+    }
+}</code></pre>
+<p>Look, we have created an instance of <code class="language-java">Cat</code> and then created an instance of <code class="language-java">Bow</code> using quite an interesting syntax.</p>
+<p>Here, the output will be:</p>
+<pre><code class="language-java">Cat Bob has a red bow.</code></pre>
+<p>Remember that to use inner classes, we must <em>create an </em>instance of the outer class<em>. </em>In our example, we created a <code class="language-java">Cat</code>.</p>
+<h5 id="scope-of-the-inner-class">Scope of the inner class</h5>
+<p>Now let's discuss what we can see from the inner class and who can access the inner class from outside.</p>
+<p>Here is our class <code class="language-java">Cat</code> with a new method <code class="language-java">sayMeow</code> and an inner class <code class="language-java">Bow</code> with a new method <code class="language-java">putOnABow</code> .</p>
+<pre><code class="language-java">public class Cat {
+
+    private String name;
+
+    public Cat(String name) {
+        this.name = name;
+    }
+
+    private void sayMeow() {
+        System.out.println(this.name + " says: \"Meow\".");
+    }
+
+    public class Bow {
+        String color;
+
+        public Bow(String color) {
+            this.color = color;
+        }
+
+        public void putOnABow() {            
+            Cat.this.sayMeow();
+            System.out.println("Bow is on!");
+        }
+
+        public void printColor() {
+            System.out.println("Cat " + Cat.this.name + " has a " + this.color + " bow.\n");
+        }
+    }
+}</code></pre>
+<p>Note, that inside the method <code class="language-java">putOnABow</code> of the class <code class="language-java">Bow</code>, we have access to the private method <code class="language-java">sayMeow</code> of the class <code class="language-java">Cat</code>. And, as you can see, in the method <code class="language-java">sayMeow</code>, we print the <a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a private field is a field that is declared with the access modifier 'private', which restricts access to that field to the class in which it is declared. | This means that other classes, even if they are in the same package, cannot directly access or modify the private field of the class. By using the private access modifier, you can encapsulate the implementation details of a class and provide a controlled interface for other classes to interact with it. Private fields are typically not exposed directly to other classes. Instead, they are made accessible through accessor methods, also known as getter and setter methods. These methods provide encapsulation, which allows you to hide implementation details and control data access, ensuring security. According to the data encapsulation principle, the field of a class should not be directly accessed from other classes. Instead, the field can be accessed only through the methods of that particular class. To access a hidden field, programmers write special types of methods called getters and setters. Getters can only read the field, and setters can only write to the field. For example, a class may have four fields, each of which is declared as private to hide the field from direct access from other classes. The class may also have public getters and setters for accessing the fields through these methods.">private field</a> <code class="language-java">name</code> of the class <code class="language-java">Cat</code> and everything works fine.<br/>Also, in the method <code class="language-java">printColor</code>, we have direct access to the private field <code class="language-java">name</code> of the class <code class="language-java">Cat</code>.</p>
+<p>How about creating a cat Princess with a golden bow to prove that our code works?</p>
+<pre><code class="language-java">Cat cat = new Cat("Princess");
+Cat.Bow bow = cat.new Bow("golden");
+
+bow.printColor();
+bow.putOnABow();</code></pre>
+<p>And, yes, the bow is on!</p>
+<pre><code class="language-java">Cat Princess has a golden bow.
+
+Princess says: "Meow".
+Bow is on!</code></pre>
+<p>As for the access from the outside world, remember that when you've instantiated an inner class, you can do whatever you want according to <a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, access modifiers are special keywords that specify who is allowed to use your code or a part of it. | They can be placed in front of any field, method, or class. There are four different access modifiers in Java: private, package-private (also known as default), protected, and public. The private access modifier is only accessible within the class itself. The package-private access modifier is accessible to classes from the same package. The protected access modifier is accessible to classes from the same package and any extending class. The public access modifier can be accessed from anywhere.">access modifiers</a>.<br/>Now let's collect all the rules together and put them to a "hard disk"!</p>
+<h5 id="rules-for-inner-classes">Rules for Inner classes</h5>
+<p>From inside the inner class, we can see all methods and fields of the outer class even if they are <code class="language-java">private</code>. And don't forget that we can use everything else according to access modifiers as well.</p>
+<p>An inner class is associated with an instance of its enclosing class. So to <a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, instantiation is the process of creating an object from a class blueprint. | This is done using the 'new' keyword followed by the class name, which allocates memory for the object and calls its constructor to initialize the object's state. Instantiated objects have their own identity and state, allowing them to interact with other objects and methods in the program. It's important to note that instantiation is a fundamental concept in object-oriented programming, as it enables the creation of multiple instances of a class, each with its own unique characteristics and behavior.">instantiate</a> an inner class and get access to it, you need to instantiate the outer class first:</p>
+<pre><code class="language-java">Outer outer = new Outer();
+Outer.InnerClass inner = outer.new InnerClass();</code></pre>
+<p> </p>
+<p></p>
+<div class="alert alert-warning"><p>Remember about access modifiers<strong>:</strong>  if you make an inner class <code class="language-java">private</code>, then it can only be accessed from inside the outer class. The same works for fields and methods.</p></div>
+<p></p>
+<p> </p>
+<p>And be careful — there are some restrictions!</p>
+<p><strong>Prior to Java 16</strong>, inside an inner class, you could<strong> not </strong>define: </p>
+<ul><li><p>any <a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, a static member is a class-level variable or method declared with the static keyword. | It is shared among all instances of the class, rather than being tied to individual objects, and can be accessed directly using the class name. Static members are useful for storing common values or utility methods applicable to the entire project. However, they cannot directly access non-static object fields because there is no instance context. Declaring non-final public static fields is generally not recommended as it can lead to issues with data consistency and visibility.">static members</a>;</p></li><li><p>enums;</p></li><li><p>an Interface.</p></li></ul>
+<h5 id="reasons-to-use-inner-classes">Reasons to use Inner Classes </h5>
+<p>Have you noticed what our two examples of <code class="language-java">Superhero</code> with the magic items and <code class="language-java">Cat</code> with a bow have in common?  Sure you have — we hid our inner classes from the outside world so that only a Superhero may use a magic cloak and only a cat may put on a bow. Now, it will be easier to navigate between classes and to understand the structure of your code.</p>
+<p>And, at last, the formal (just a little bit) list of inner class benefits:</p>
+<ol><li><p>They increase <strong>encapsulation. </strong>Our <code class="language-java">Bow</code> is only for <code class="language-java">Cat</code>. You can make a field (method) <code class="language-java">private</code> and hide it from other classes, using it only inside the inner class.</p></li><li><p>Inner classes will <strong>organize </strong>your code and make your packages be more logical: all the magic equipment for <code class="language-java">Superhero</code> will be in one place. </p></li></ol>
+<h5 id="summary">Summary</h5>
+<p>You can create a class within another class, and such classes are called nested. A non-static nested class is called an inner class. We hope you are ready to use it. Just don't forget to instantiate the outer class first!</p>
+<p>The main idea of Inner classes is to hide some code from other classes and increase <a class="theory-lookup not-relevant" href="/learn/step/11505" rel="noopener noreferrer nofollow" target="_blank" title="In Java, encapsulation is the practice of wrapping data and the methods that manipulate that data within a single unit, typically a class. | This allows for increased security and control over the data, as well as a more organized code structure. By hiding the implementation details of a class from the outside world, encapsulation promotes modular programming and reduces the risk of data corruption. Additionally, encapsulation can increase code readability and maintainability by providing a clear separation of concerns. Typically, a class does not expose its fields to other classes. Instead, it makes them accessible through special methods called accessor methods, also known as getter and setter methods. These methods provide encapsulation by allowing you to hide implementation details and control data access, ensuring security. According to the data encapsulation principle, a class's fields cannot be directly accessed from other classes. They can be accessed only through the methods of that particular class. To access hidden fields, programmers write special types of methods called getters and setters.">encapsulation</a>.</p>
+</div>

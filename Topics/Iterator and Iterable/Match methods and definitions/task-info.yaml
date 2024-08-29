@@ -1,0 +1,23 @@
+type: matching
+captions:
+  - next()
+  - hasNext()
+  - remove()
+  - current()
+options:
+  - removes an elements that has been obtained
+  - obtains the next element of a collection
+  - checks whether there is a next element
+  - there is no such method
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2341#comment
+status: Solved
+record: -1
+ordering:
+  - 0
+  - 1
+  - 2
+  - 3

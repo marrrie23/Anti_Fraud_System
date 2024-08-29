@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: false
+options:
+  - text: an ordered collection
+  - text: an interface implemented by all collections
+  - text: a universal mechanism for iterating over collections
+  - text: another name of the for-each loop
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/8402#comment
+status: Solved
+record: -1
+local_check: false

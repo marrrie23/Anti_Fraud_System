@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="delegatedBuild" value="false" />
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/classes/java" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/generated/sources/annotationProcessor/java" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/generated/sources/headers/java" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/reports/tests" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/test-results" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/build/tmp" />
+            <option value="$PROJECT_DIR$/Anti-Fraud System/task/out" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/A bow and a cat" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Christmas tree" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Improve your vehicle" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Nested or inner" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/New Inner class" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Pumpkin and candle" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Why do we need inner classes" />
+            <option value="$PROJECT_DIR$/Topics/Inner classes/Your vehicle" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Finding the max number" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Hip-Hop" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Interfaces with iterator" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Iterators and for-each" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Match methods and definitions" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Remove elements of a collection" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/What is an Iterable" />
+            <option value="$PROJECT_DIR$/Topics/Iterator and Iterable/What is an Iterator" />
+            <option value="$PROJECT_DIR$/Topics/Stack/Match methods" />
+            <option value="$PROJECT_DIR$/Topics/Stack/Stack implementation" />
+            <option value="$PROJECT_DIR$/Topics/Stack/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Stack/Which brackets are balanced" />
+            <option value="$PROJECT_DIR$/util" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

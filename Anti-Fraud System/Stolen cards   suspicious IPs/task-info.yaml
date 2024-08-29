@@ -1,0 +1,87 @@
+type: edu
+custom_name: Stolen cards & suspicious IPs
+files:
+  - name: src/antifraud/AntiFraudApplication.java
+    visible: true
+    learner_created: false
+  - name: src/resources/application.properties
+    visible: true
+    learner_created: false
+  - name: build.gradle
+    visible: true
+    learner_created: false
+  - name: test/AntiFraudTest.java
+    visible: false
+    learner_created: false
+  - name: src/antifraud/User.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/TransactionResponse.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/AntiFraudController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/RestAuthenticationEntryPoint.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/UserController.java
+    visible: true
+    learner_created: true
+  - name: User.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/Role.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/UserService.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/UserRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SecurityConfig.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/CustomUserDetailsService.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/UserDto.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/TransactionRequest.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SuspiciousIp.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/StolenCardRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SuspiciousIpService.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/StolenCard.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SuspiciousIpRepository.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/StolenCardService.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SuspiciousIpController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/StolenCardController.java
+    visible: true
+    learner_created: true
+  - name: src/antifraud/SuspiciousIpRequest.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/18070#comment
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Thu, 15 Aug 2024 14:36:19 UTC"
+record: 4

@@ -1,0 +1,15 @@
+type: choice
+is_multiple_choice: true
+options:
+  - text: An iterator allows you to sequentially obtain elements from a collection
+  - text: It is possible to remove elements from a collection using the for-each loop
+  - text: The for-each loop allows you to sequentially obtain elements from a collection
+  - text: An iterator allows you to remove elements from a collection
+files:
+  - name: src/Task.java
+    visible: true
+    learner_created: false
+feedback_link: https://hyperskill.org/learn/step/2109#comment
+status: Solved
+record: -1
+local_check: false
